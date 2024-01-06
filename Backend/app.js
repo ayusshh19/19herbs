@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
 const cors = require('cors');
 const corsOption = {
-    origin: ['https://19herbs.netlify.app/'],
+    origin: ['https://19herbs.netlify.app'],
     credentials:true, 
 };
 app.use(cors(corsOption));
