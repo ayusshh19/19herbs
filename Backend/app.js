@@ -30,14 +30,9 @@ app.use(function(req, res, next) {
     )
     next()
   })
-app.use(session({
-    secret: 'session',
-    resave: false,
-    saveUninitialized: false,
-  }))
+
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
-app.use(express.json());
 app.use(express.json());
 app.use(cookieParser());
 app.use(fileUpload());
