@@ -6,8 +6,8 @@ const sendToken = (user, statusCode, res) => {
     // options for cookie
     const options = {
       httpOnly: true,
-    secure: process.env.NODE_ENV == "production",
-    sameSite: "strict",
+    secure: true,
+    sameSite: "None",
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
 
     };
