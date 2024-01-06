@@ -20,7 +20,7 @@ const errorMiddleware = require("./middleware/error");
 //   require("dotenv").config({ path: "backend/config/config.env" });
 // }
 app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+  res.header('Access-Control-Allow-Origin', req.headers.origin);
     res.header('Content-Type', 'application/json;charset=UTF-8')
     res.header('Access-Control-Allow-Credentials', true)
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
