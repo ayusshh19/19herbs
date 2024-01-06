@@ -8,8 +8,8 @@ const corsOption = {
     origin: ['http://localhost:5173'],
     credentials:true, 
 };
-// app.use(cors(corsOption));
-app.use(cors())
+app.use(cors(corsOption));
+// app.use(cors())
 const errorMiddleware = require("./middleware/error");
 
 
