@@ -1,0 +1,12 @@
+.css-1wf8b0h-MuiTabs-flexContainer{
+    display: flex;
+    justify-content: space-evenly !important;   
+}
+
+.Mui-selected{
+    color: #1B5D04 !important;
+}
+.css-1aquho2-MuiTabs-indicator{
+    color: #1B5D04 !important;
+    background-color: #4d7c0f !important;
+}

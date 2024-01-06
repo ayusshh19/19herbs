@@ -1,0 +1,22 @@
+.ordersummary ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Track */
+.ordersummary  ::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #edf2f7;
+  }
+  
+  /* Handle */
+.ordersummary  ::-webkit-scrollbar-thumb {
+    background: #1B5D04;
+    border-radius: 100vh;
+    border: 1px solid #1B5D04;
+  }
+  
+  /* Handle on hover */
+.ordersummary  ::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+  }
