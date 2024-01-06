@@ -1,5 +1,6 @@
 import axios from "axios";
 import { ALL_REVIEW_FAIL, ALL_REVIEW_REQUEST, ALL_REVIEW_SUCCESS, DELETE_REVIEW_FAIL, DELETE_REVIEW_REQUEST, DELETE_REVIEW_SUCCESS, NEW_REVIEW_FAIL, NEW_REVIEW_REQUEST, NEW_REVIEW_SUCCESS } from "../constants/productconstant";
+import { BASE_URL } from "../constants/baseurl";
 
 export const createreview = (productData) => async (dispatch) => {
     try {
@@ -9,7 +10,7 @@ export const createreview = (productData) => async (dispatch) => {
       const config = { headers: { "Content-Type": "application/json" } };
   
       const  {data}  = await axios.post(
-        `http://localhost:4000/api/v1/new/review`,
+        `${BASE_URL}/api/v1/new/review`,
         productData,
         config
       );
@@ -31,7 +32,7 @@ export const createreview = (productData) => async (dispatch) => {
     try {
       dispatch({ type: ALL_REVIEW_REQUEST });
 
-      const { data } = await axios.get("http://localhost:4000/api/v1/all/review");
+      const { data } = await axios.get(`${BASE_URL}/api/v1/all/review`);
       console.log(data);
 
       dispatch({
@@ -53,7 +54,7 @@ export const createreview = (productData) => async (dispatch) => {
       const config = { withCredentials: true };
 
       const { data } = await axios.delete(
-        `http://localhost:4000/api/v1/admin/reviewdelete/${reviewId}`,config
+        `${BASE_URL}/api/v1/admin/reviewdelete/${reviewId}`,config
       );
 
   

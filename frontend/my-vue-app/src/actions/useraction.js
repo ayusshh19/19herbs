@@ -1,3 +1,4 @@
+import { BASE_URL } from "../constants/baseurl";
 import {
     LOGIN_REQUEST,
     LOGIN_FAIL,
@@ -45,7 +46,7 @@ import {
       const config = { withCredentials: true,headers: { "Content-Type": "application/json" } };
   
       const { data } = await axios.post(
-        `http://localhost:4000/api/v1/login`,
+        `${BASE_URL}/api/v1/login`,
         { email:email,password: password },
         config
       );
@@ -63,7 +64,7 @@ import {
     //   const config = { headers: { "Content-Type": "multipart/form-data" } };
     const config = { withCredentials: true,headers: { "Content-Type": "application/json" } };
       const { fname,lname, email, password } = userData;
-      const { data } = await axios.post(`http://localhost:4000/api/v1/register`, {name:`${fname} ${lname}`,email:email,password:password}, config);
+      const { data } = await axios.post(`${BASE_URL}/api/v1/register`, {name:`${fname} ${lname}`,email:email,password:password}, config);
   
       dispatch({ type: REGISTER_USER_SUCCESS, payload: data.user });
     } catch (error) {
@@ -79,7 +80,7 @@ import {
     try {
       dispatch({ type: LOAD_USER_REQUEST });
   
-      const { data } = await axios.get(`http://localhost:4000/api/v1/me`,{ withCredentials: true});
+      const { data } = await axios.get(`${BASE_URL}/api/v1/me`,{ withCredentials: true});
   
       dispatch({ type: LOAD_USER_SUCCESS, payload: data.user });
     } catch (error) {
@@ -90,7 +91,7 @@ import {
   // Logout User
   export const logout = () => async (dispatch) => {
     try {
-      await axios.get(`http://localhost:4000/api/v1/logout`,{ withCredentials: true});
+      await axios.get(`${BASE_URL}/api/v1/logout`,{ withCredentials: true});
   
       dispatch({ type: LOGOUT_SUCCESS });
     } catch (error) {
@@ -105,7 +106,7 @@ import {
   
       const config = { headers: { "Content-Type": "multipart/form-data" } };
   
-      const { data } = await axios.put(`http://localhost:4000/api/v1/me/update`, userData, config);
+      const { data } = await axios.put(`${BASE_URL}/api/v1/me/update`, userData, config);
   
       dispatch({ type: UPDATE_PROFILE_SUCCESS, payload: data.success });
     } catch (error) {
@@ -124,7 +125,7 @@ import {
       const config = { headers: { "Content-Type": "application/json" } };
   
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/password/update`,
+        `${BASE_URL}/api/v1/password/update`,
         passwords,
         config
       );
@@ -146,7 +147,7 @@ import {
   
       const config = { headers: { "Content-Type": "application/json" } };
   
-      const { data } = await axios.post(`http://localhost:4000/api/v1/password/forgot`, {email:email}, config);
+      const { data } = await axios.post(`${BASE_URL}/api/v1/password/forgot`, {email:email}, config);
       console.log(data);
       dispatch({ type: FORGOT_PASSWORD_SUCCESS, payload: data.message });
     } catch (error) {
@@ -165,7 +166,7 @@ import {
       const config = { headers: { "Content-Type": "application/json" } };
       console.log(passwords);
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/password/reset/${token}`,
+        `${BASE_URL}/api/v1/password/reset/${token}`,
         passwords,
         config
       );
@@ -183,7 +184,7 @@ import {
   export const getAllUsers = () => async (dispatch) => {
     try {
       dispatch({ type: ALL_USERS_REQUEST });
-      const { data } = await axios.get(`http://localhost:4000/api/v1/admin/users`,{withCredentials: true});
+      const { data } = await axios.get(`${BASE_URL}/api/v1/admin/users`,{withCredentials: true});
   
       dispatch({ type: ALL_USERS_SUCCESS, payload: data.users });
     } catch (error) {
@@ -230,7 +231,7 @@ import {
     try {
       dispatch({ type: DELETE_USER_REQUEST });
   
-      const { data } = await axios.delete(`http://localhost:4000/api/v1/admin/user/${id}`,{withCredentials: true});
+      const { data } = await axios.delete(`${BASE_URL}/api/v1/admin/user/${id}`,{withCredentials: true});
   
       dispatch({ type: DELETE_USER_SUCCESS, payload: data });
     } catch (error) {

@@ -8,7 +8,6 @@ const sendToken = (user, statusCode, res) => {
       maxAge: new Date(
         Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
       ),
-      httpOnly: false 
     };
     console.log(token)
     res.cookie("token", token, options).status(statusCode).json({

@@ -33,6 +33,7 @@ export function StepperWithContent() {
     );
     setStripeApiKey(data.stripeApiKey);
    } catch (error) {
+    console.log(error);
     if(!error.response.data.success){
       alert.error("Please login before checkout")
       navigate("/login")

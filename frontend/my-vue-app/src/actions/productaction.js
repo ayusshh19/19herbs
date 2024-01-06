@@ -30,6 +30,7 @@ import {
   DELETE_REVIEW_FAIL,
   CLEAR_ERRORS,
 } from "../constants/productconstant";
+import { BASE_URL } from "../constants/baseurl";
 
 // Get All Products
 export const getProduct =
@@ -38,10 +39,10 @@ export const getProduct =
     try {
       dispatch({ type: ALL_PRODUCT_REQUEST });
 
-      let link = `http://localhost:4000/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
+      let link = `${BASE_URL}/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
 
       if (category) {
-        link = `http://localhost:4000/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}&ratings[gte]=${ratings}`;
+        link = `${BASE_URL}/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}&ratings[gte]=${ratings}`;
       }
 
       const { data } = await axios.get(link);
@@ -63,7 +64,7 @@ export const getAdminProduct = () => async (dispatch) => {
   try {
     dispatch({ type: ADMIN_PRODUCT_REQUEST });
 
-    const { data } = await axios.get("http://localhost:4000/api/v1/admin/products",{ withCredentials: true});
+    const { data } = await axios.get("${BASE_URL}/api/v1/admin/products",{ withCredentials: true});
 
     dispatch({
       type: ADMIN_PRODUCT_SUCCESS,
@@ -86,7 +87,7 @@ export const createProduct = (productData) => async (dispatch) => {
     const config = { withCredentials: true,headers: { "Content-Type": "application/json" } };
 
     const { data } = await axios.post(
-      `http://localhost:4000/api/v1/admin/product/new`,
+      `${BASE_URL}/api/v1/admin/product/new`,
       productData,
       config
     );
@@ -114,7 +115,7 @@ export const updateProduct = (id, productData) => async (dispatch) => {
     };
 
     const { data } = await axios.put(
-      `http://localhost:4000/api/v1/admin/product/${id}`,
+      `${BASE_URL}/api/v1/admin/product/${id}`,
       productData,
       config
     );
@@ -136,7 +137,7 @@ export const deleteProduct = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_PRODUCT_REQUEST });
 
-    const { data } = await axios.delete(`http://localhost:4000/api/v1/admin/product/${id}`,{ withCredentials: true});
+    const { data } = await axios.delete(`${BASE_URL}/api/v1/admin/product/${id}`,{ withCredentials: true});
 
     dispatch({
       type: DELETE_PRODUCT_SUCCESS,
