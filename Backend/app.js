@@ -6,7 +6,7 @@ const fileUpload = require("express-fileupload");
 const cors = require('cors');
 const passport = require('passport')
 const corsOption = {
-    origin: ['http://localhost:5173'],
+    origin: ['https://19herbs.netlify.app'],
     credentials:true, 
 };
 app.use(cors(corsOption));
