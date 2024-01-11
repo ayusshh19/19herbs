@@ -68,7 +68,7 @@ export default function Addtocart({ history }) {
                   <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                     <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6 ">
                       <div className="flex items-start justify-between">
-                        <Dialog.Title className="text-lg  font-bold text-gray-900">
+                        <Dialog.Title className="text-lg  font-bold text-darkbutton">
                           Shopping cart
                         </Dialog.Title>
                         <div className="ml-3 flex h-7 items-center">
@@ -103,7 +103,7 @@ export default function Addtocart({ history }) {
 
                                   <div className="ml-4 flex flex-1 flex-col ">
                                     <div>
-                                      <div className="flex justify-between text-base font-bold text-gray-900">
+                                      <div className="flex justify-between text-base font-bold text-darkbutton">
                                         <h3>
                                           <a href={product.href}>
                                             {product.name}
@@ -125,7 +125,7 @@ export default function Addtocart({ history }) {
                                       <div class="flex flex-row justify-evenly items-center  w-full rounded-lg relative bg-transparent text-lg border-2 border-gray-200">
                                         <button
                                           data-action="decrement"
-                                          class="  text-darkuse hover:text-white hover:bg-upperbar h-full w-full   rounded-l cursor-pointer outline-none"
+                                          class="  text-darkbutton hover:text-white hover:bg-darkbutton h-full w-full   rounded-l cursor-pointer outline-none"
                                           onClick={() =>
                                             decreaseQuantity(
                                               product.product,
@@ -137,12 +137,12 @@ export default function Addtocart({ history }) {
                                             −
                                           </span>
                                         </button>
-                                        <p className="my-1 mx-1 sm:mx-4 text-lg  font-thin text-darkuse">
+                                        <p className="my-1 mx-1 sm:mx-4 text-lg  font-thin text-darkbutton">
                                           {product.quantity}
                                         </p>
                                         <button
                                           data-action="increment"
-                                          class="text-darkuse hover:text-white hover:bg-upperbar h-full w-full   rounded-r cursor-pointer"
+                                          class="text-darkbutton hover:text-white hover:bg-darkbutton h-full w-full   rounded-r cursor-pointer"
                                           onClick={() =>
                                             increaseQuantity(
                                               product.product,
@@ -173,7 +173,7 @@ export default function Addtocart({ history }) {
                                 </li>
                               ))
                             ) : (
-                              <h1 className="text-upperbar text-2xl">
+                              <h1 className="text-darkbutton text-2xl">
                                 Please add product to cart to proceed
                               </h1>
                             )}
@@ -183,7 +183,7 @@ export default function Addtocart({ history }) {
                     </div>
 
                     <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
-                      <div className="flex justify-between text-xl first-letter:sm:text-base font-bold  text-gray-900">
+                      <div className="flex justify-between text-xl first-letter:sm:text-base font-bold  text-darkbutton">
                         <p>Subtotal</p>
                         <p>{`₹ ${cartItems.reduce(
                           (acc, item) => acc + item.quantity * item.price,
@@ -195,12 +195,12 @@ export default function Addtocart({ history }) {
                       </p>
                       <div className="mt-6">
                         {cartItems.length===0?(<Link
-                          className={`${cartItems.length===0?"cursor-not-allowed disabled":""} flex items-center justify-center rounded-md border border-transparent bg-darkuse px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-upperbar`}
+                          className={`${cartItems.length===0?"cursor-not-allowed disabled":""} flex items-center justify-center rounded-md border border-transparent bg-darkbutton px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-darktext`}
                         >
                           Checkout
                         </Link>):(<Link
                           to={"/checkout"}
-                          className={` flex items-center justify-center rounded-md border border-transparent bg-darkuse px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-upperbar`}
+                          className={` flex items-center justify-center rounded-md border border-transparent bg-darkbutton px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-darktext`}
                         >
                           Checkout
                         </Link>)}

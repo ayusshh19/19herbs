@@ -55,9 +55,9 @@ function Testimonials() {
   }, []);
 
   return (
-    <section class="bg-white flex flex-col justify-center items-center ">
+    <section class="flex flex-col justify-center items-center ">
       <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <h2 class="text-center text-4xl font-bold tracking-tight text-darkuse  sm:text-5xl">
+        <h2 class="text-center text-4xl font-bold tracking-tight text-darkbutton  sm:text-5xl">
           Read trusted reviews from our customers
         </h2>
 
@@ -67,7 +67,7 @@ function Testimonials() {
               if(reviewdata.rating>3){
                 return (
                   <div class="mb-8 sm:break-inside-avoid">
-                    <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+                    <blockquote class="rounded-lg bg-lighttext p-6 shadow-sm sm:p-8">
                       <div class="flex items-center gap-4">
                         <img
                           alt="Man"
@@ -80,7 +80,7 @@ function Testimonials() {
                         />
   
                         <div>
-                          <div class="flex justify-center gap-0.5 text-green-500">
+                          <div class="flex justify-start gap-0.5 text-green-500">
                             {Array.apply(0, Array(reviewdata.rating)).map(function (x, i) {
                               return (
                                 <svg
@@ -96,13 +96,13 @@ function Testimonials() {
                             
                           </div>
   
-                          <p class="mt-0.5 text-lg font-medium text-gray-900">
+                          <p class="mt-0.5 text-lg font-extrabold text-white">
                             {reviewdata.user}
                           </p>
                         </div>
                       </div>
   
-                      <p class="mt-4 text-gray-700">{reviewdata.comment}</p>
+                      <p class="mt-4 text-white">{reviewdata.comment}</p>
                     </blockquote>
                   </div>
                 );
@@ -113,7 +113,7 @@ function Testimonials() {
       {isAuthenticated && (
         <div>
           <button
-            class="w-full bg-darkuse px-6 py-3 rounded text-sm text-center font-bold uppercase tracking-wide text-white transition-none hover:bg-darkuse sm:mt-0 sm:w-auto sm:shrink-0"
+            class="w-full bg-darktext px-6 py-3 rounded text-sm text-center font-bold uppercase tracking-wide text-white transition-none hover:bg-darktext sm:mt-0 sm:w-auto sm:shrink-0"
             onClick={() => setcurrentstart(true)}
           >
             Click here to share your with us!
@@ -138,7 +138,7 @@ function Testimonials() {
                   onClick={() => setcurrentstart(false)}
                 >
                   <svg
-                    class="h-8 w-8 text-darkuse"
+                    class="h-8 w-8 text-darktext"
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -303,7 +303,7 @@ function Testimonials() {
                       />
                     </div>
                     <button
-                      class="py-3 my-8 text-lg bg-gradient-to-r from-gray-50 to-darkuse hover:from-upperbar hover:to-darkuse rounded-xl text-white"
+                      class="py-3 my-8 text-lg bg-gradient-to-r from-gray-50 to-darktext hover:from-upperbar hover:to-darktext rounded-xl text-white"
                       onClick={createProductSubmitHandler}
                     >
                       Rate now

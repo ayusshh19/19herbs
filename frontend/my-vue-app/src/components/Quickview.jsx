@@ -3,7 +3,11 @@ import { Dialog, RadioGroup, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { useSelector, useDispatch } from "react-redux";
-import { addItemsToCart, removeItemsFromCart, totalcartitems } from "../actions/cartaction";
+import {
+  addItemsToCart,
+  removeItemsFromCart,
+  totalcartitems,
+} from "../actions/cartaction";
 import Usercontext from "../context/Usercontext";
 const product = {
   name: "Basic Tee 6-Pack ",
@@ -30,26 +34,30 @@ export default function Quickview({ open, setopen }) {
     }
     dispatch(addItemsToCart(id, newQty));
   };
-   
+
   const handleaddtobag = () => {
     increaseQuantity(
       currentproductquickview._id,
       currentproductquickview.quantity,
       100
     );
-    setopen(false)
+    setopen(false);
   };
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-50 " onClose={() => setopen(false)}>
+      <Dialog
+        as="div"
+        className="relative z-50 "
+        onClose={() => setopen(false)}
+      >
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
           enterFrom="opacity-0"
           enterTo="opacity-100"
           leave="ease-in duration-200"
-          leaveFrom="opacity-100" 
+          leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
           <div className="fixed inset-0 hidden bg-gray-500 bg-opacity-75 transition-opacity md:block" />
@@ -70,7 +78,7 @@ export default function Quickview({ open, setopen }) {
                 <div className="relative flex w-full items-center overflow-hidden bg-white px-4 pb-8 pt-14 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
                   <button
                     type="button"
-                    className="absolute right-4 top-4 text-gray-400 hover:text-gray-500 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8"
+                    className="absolute right-4 top-4 text-darkbutton hover:text-gray-500 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8"
                     onClick={() => setopen(false)}
                   >
                     <span className="sr-only">Close</span>
@@ -86,7 +94,7 @@ export default function Quickview({ open, setopen }) {
                       />
                     </div>
                     <div className="sm:col-span-8 lg:col-span-7">
-                      <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">
+                      <h2 className="text-2xl font-bold text-darkbutton sm:pr-12">
                         {currentproductquickview?.name}
                       </h2>
 
@@ -98,11 +106,11 @@ export default function Quickview({ open, setopen }) {
                           Product information
                         </h3>
 
-                        <p className="text-2xl text-gray-900">
+                        <p className="text-2xl text-darktext">
                           ₹{currentproductquickview?.price}
                           <span className="ml-4 line-through text-gray-400">
-                   ₹{currentproductquickview?.fakeprice}
-                  </span>
+                            ₹{currentproductquickview?.fakeprice}
+                          </span>
                         </p>
 
                         {/* Reviews */}
@@ -144,14 +152,14 @@ export default function Quickview({ open, setopen }) {
                           Product options
                         </h3>
 
-                        <p class="text-base leading-normal text-gray-600 dark:text-darkuse mt-2">
+                        <p class=" font-light leading-normal text-darktext dark:text-darkuse mt-2">
                           {currentproductquickview?.description}
                         </p>
 
                         {/* Sizes */}
 
                         <button
-                          className="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-darkuse  px-8 py-3 text-base font-medium text-white hover:bg-lightuse focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                          className="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-darkbutton  px-8 py-3 text-base font-medium text-white hover:bg-lightuse focus:outline-none cursor-pointer focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                           onClick={handleaddtobag}
                         >
                           Add to bag

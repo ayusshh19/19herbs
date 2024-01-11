@@ -47,7 +47,7 @@ function User() {
       <div class="sm:mx-auto ml-10 max-w-screen-xl    px-4 py-20 sm:px-8">
         <div class="flex items-center justify-between pb-6">
           <div>
-            <h2 class="font-semibold text-gray-700">User Accounts</h2>
+            <h2 class="font-bold  text-darkbutton">User Accounts</h2>
             <span class="text-xs text-gray-500">
               View accounts of registered users
             </span>
@@ -57,7 +57,7 @@ function User() {
           <div class="overflow-x-auto">
             <table class="w-full">
               <thead>
-                <tr class="bg-darkuse text-left text-xs font-semibold uppercase tracking-widest text-white">
+                <tr class="bg-darkbutton text-left text-xs font-bold uppercase tracking-widest text-white">
                   <th class="px-5 py-3">ID</th>
                   <th class="px-5 py-3">Full Name</th>
                   <th class="px-5 py-3">User Role</th>
@@ -66,7 +66,7 @@ function User() {
                   <th class="px-5 py-3">Status</th>
                 </tr>
               </thead>
-              <tbody class="text-gray-500">
+              <tbody class="text-darkbutton">
                 {users &&
                   users.map((data) => {
                     return (

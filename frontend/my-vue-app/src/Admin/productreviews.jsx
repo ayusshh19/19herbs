@@ -51,7 +51,7 @@ export default function Productreviews() {
           <div class="overflow-x-auto">
             <table class="w-full">
               <thead>
-                <tr class="bg-darkuse text-left text-xs font-semibold uppercase tracking-widest text-white">
+                <tr class="bg-darkbutton text-left text-xs font-bold uppercase tracking-widest text-white">
                   <th class="px-5 py-3">Profile</th>
                   <th class="px-5 py-3">Name</th>
                   <th class="px-5 py-3">Ratings</th>
@@ -59,7 +59,7 @@ export default function Productreviews() {
                   <th class="px-5 py-3">Delete</th>
                 </tr>
               </thead>
-              <tbody class="text-gray-500">
+              <tbody class="text-darkbutton">
                 {reviews &&
                   reviews.users?.map((data) => {
                     return (

@@ -4,12 +4,14 @@ const connectDatabase=require('./config/database')
 if (process.env.NODE_ENV !== "PRODUCTION") {
     require("dotenv").config({ path: 'config/config.env' });
 }
+
 process.on("uncaughtException", (err) => {
     console.log(`Error: ${err.message}`);
     console.log(`Shutting down the server due to Uncaught Exception`);
     process.exit(1);
   });
 connectDatabase()
+// console.log(process.env.CLOUDINARY_NAME)
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_NAME,
     api_key: process.env.CLOUDINARY_API_KEY,

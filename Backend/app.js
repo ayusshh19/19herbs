@@ -4,8 +4,9 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
 const cors = require('cors');
+const passport = require('passport')
 const corsOption = {
-    origin: ['https://19herbs.netlify.app'],
+    origin: ['http://localhost:5173'],
     credentials:true, 
 };
 app.use(cors(corsOption));
@@ -30,20 +31,23 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(express.json());
 app.use(cookieParser());
 app.use(fileUpload());
-
-
+require('./utils/googlestrategy');
+app.use(passport.initialize());
+// console.log(process.env.CLOUDINARY_NAME)
 // Route Imports
 const product = require("./routes/productroutes");
 const user = require("./routes/userroutes");
 const order = require("./routes/orderroutes");
 const payment = require("./routes/paymentroute");
 const review = require("./routes/reviewroutes");
+const googleauth = require("./routes/googleauthroute");
 
 app.use("/api/v1", product);
 app.use("/api/v1", user);
 app.use("/api/v1", order);
 app.use("/api/v1", payment);
 app.use("/api/v1", review);
+app.use("/",googleauth)
 
 
 app.use(errorMiddleware);

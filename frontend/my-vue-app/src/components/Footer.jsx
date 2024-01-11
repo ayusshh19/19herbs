@@ -3,17 +3,17 @@ import React from "react";
 function Footer() {
   return (
     <div>
-      <footer class="bg-lightuse sm:text-xl">
+      <footer class="bg-darktext sm:text-xl">
         <div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 sm:px-6 lg:px-8">
           <div class="lg:flex lg:items-start justify-center lg:gap-8">
             <div class="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
               <div class="col-span-2">
                 <div>
-                  <h2 class="text-2xl font-bold text-darkuse">
+                  <h2 class="text-2xl font-extrabold text-white">
                     Get the latest news!
                   </h2>
 
-                  <p class="mt-4 text-darkuse">
+                  <p class="mt-4 font-bold text-white">
                     Stay updated with our upcomming products and offers
                   </p>
                 </div>
@@ -34,7 +34,7 @@ function Footer() {
                       class="w-full border-none p-3 rounded focus:border-transparent focus:ring-transparent sm:text-sm"
                     />
 
-                    <button class="mt-1 w-full bg-upperbar px-6 py-3 rounded text-sm font-bold uppercase tracking-wide text-white transition-none hover:bg-darkuse sm:mt-0 sm:w-auto sm:shrink-0">
+                    <button class="mt-1 w-full bg-darkbutton px-6 py-3 rounded text-sm font-bold uppercase tracking-wide text-white transition-none hover:bg-lighttext sm:mt-0 sm:w-auto sm:shrink-0">
                       Sign Up
                     </button>
                   </div>
@@ -42,13 +42,13 @@ function Footer() {
               </div>
 
               <div class="col-span-1 sm:col-span-1 text-center">
-                <p class="font-medium text-darkuse ">Services</p>
+                <p class="font-bold text-white ">Services</p>
 
                 <ul class="mt-6 space-y-4 text-sm">
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75 "
+                      class="text-darkbutton font-bold transition hover:opacity-75 "
                     >
                       1on1 Coaching
                     </a>
@@ -57,7 +57,7 @@ function Footer() {
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-darkbutton font-bold transition hover:opacity-75"
                     >
                       Company Review
                     </a>
@@ -66,7 +66,7 @@ function Footer() {
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-darkbutton font-bold transition hover:opacity-75"
                     >
                       Accounts Review
                     </a>
@@ -75,7 +75,7 @@ function Footer() {
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-darkbutton font-bold transition hover:opacity-75"
                     >
                       HR Consulting
                     </a>
@@ -84,7 +84,7 @@ function Footer() {
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-darkbutton font-bold transition hover:opacity-75"
                     >
                       SEO Optimisation
                     </a>
@@ -93,13 +93,13 @@ function Footer() {
               </div>
 
               <div class="col-span-1 sm:col-span-1 text-center">
-                <p class="font-medium text-darkuse">Company</p>
+                <p class="font-bold text-white">Company</p>
 
                 <ul class="mt-6 space-y-4 text-sm">
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-darkbutton font-bold transition hover:opacity-75"
                     >
                       About
                     </a>
@@ -108,7 +108,7 @@ function Footer() {
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-darkbutton font-bold transition hover:opacity-75"
                     >
                       Meet the Team
                     </a>
@@ -117,7 +117,7 @@ function Footer() {
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-darkbutton font-bold transition hover:opacity-75"
                     >
                       Accounts Review
                     </a>
@@ -126,13 +126,13 @@ function Footer() {
               </div>
 
               <div class="col-span-1 sm:col-span-1 text-center">
-                <p class="font-medium text-darkuse">Helpful Links</p>
+                <p class="font-bold text-white">Helpful Links</p>
 
                 <ul class="mt-6 space-y-4 text-sm">
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-darkbutton font-bold transition hover:opacity-75"
                     >
                       Contact
                     </a>
@@ -141,7 +141,7 @@ function Footer() {
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-darkbutton font-bold transition hover:opacity-75"
                     >
                       FAQs
                     </a>
@@ -150,7 +150,7 @@ function Footer() {
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-darkbutton font-bold transition hover:opacity-75"
                     >
                       Live Chat
                     </a>
@@ -159,13 +159,13 @@ function Footer() {
               </div>
 
               <div class="col-span-1  sm:col-span-1 text-center">
-                <p class="font-medium text-darkuse">Legal</p>
+                <p class="font-bold text-white">Legal</p>
 
                 <ul class="mt-6 space-y-4 text-sm">
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-darkbutton font-bold transition hover:opacity-75"
                     >
                       Accessibility
                     </a>
@@ -174,7 +174,7 @@ function Footer() {
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-darkbutton font-bold transition hover:opacity-75"
                     >
                       Returns Policy
                     </a>
@@ -183,7 +183,7 @@ function Footer() {
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-darkbutton font-bold transition hover:opacity-75"
                     >
                       Refund Policy
                     </a>
@@ -192,7 +192,7 @@ function Footer() {
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-darkbutton font-bold transition hover:opacity-75"
                     >
                       Hiring Statistics
                     </a>
@@ -200,7 +200,7 @@ function Footer() {
                 </ul>
               </div>
               <div class="col-span-2   sm:col-span-1">
-                <p class="font-medium text-center  text-darkuse mb-4">Social Links</p>
+                <p class="font-bold text-center  text-white mb-4">Social Links</p>
 
                 <ul class="col-span-2 flex justify-center sm:justify-start gap-6 lg:col-span-5 lg:justify-end">
                 <li>
@@ -208,7 +208,7 @@ function Footer() {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    class="text-darkuse transition hover:opacity-75"
+                    class="text-darkbutton transition hover:opacity-75"
                   >
                     <span class="sr-only">Facebook</span>
 
@@ -232,7 +232,7 @@ function Footer() {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    class="text-darkuse transition hover:opacity-75"
+                    class="text-darkbutton transition hover:opacity-75"
                   >
                     <span class="sr-only">Instagram</span>
 
@@ -256,7 +256,7 @@ function Footer() {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    class="text-darkuse transition hover:opacity-75"
+                    class="text-darkbutton transition hover:opacity-75"
                   >
                     <span class="sr-only">Twitter</span>
 
@@ -276,7 +276,7 @@ function Footer() {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    class="text-darkuse transition hover:opacity-75"
+                    class="text-darkbutton transition hover:opacity-75"
                   >
                     <span class="sr-only">GitHub</span>
 
@@ -300,7 +300,7 @@ function Footer() {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    class="text-darkuse transition hover:opacity-75"
+                    class="text-darkbutton transition hover:opacity-75"
                   >
                     <span class="sr-only">Dribbble</span>
 
@@ -327,25 +327,25 @@ function Footer() {
 
           <div class="mt-8 border-t border-gray-100 pt-8">
             <div class="sm:flex sm:justify-between">
-              <p class="text-xs text-gray-500">
+              <p class="text-xs text-darkbutton">
                 &copy; 2023. 19 HERBS. All rights reserved.
               </p>
 
               <ul class="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end">
                 <li>
-                  <a href="#" class="text-gray-500 transition hover:opacity-75">
+                  <a href="#" class="text-darkbutton transition hover:opacity-75">
                     Terms & Conditions
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-gray-500 transition hover:opacity-75">
+                  <a href="#" class="text-darkbutton transition hover:opacity-75">
                     Privacy Policy
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-gray-500 transition hover:opacity-75">
+                  <a href="#" class="text-darkbutton transition hover:opacity-75">
                     Cookies
                   </a>
                 </li>

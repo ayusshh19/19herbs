@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { login, clearErrors, forgotPassword } from "../actions/useraction";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Login() {
   const dispatch = useDispatch();
@@ -16,16 +17,13 @@ function Login() {
   const { error, loading, isAuthenticated } = useSelector(
     (state) => state.user
   );
-  const {message} = useSelector(
-    (state) => state.forgotPassword
-  );
- 
+  const { message } = useSelector((state) => state.forgotPassword);
+
   const [forgotpasswordemail, setforgotpasswordemail] = useState("");
 
   const forgotPasswordSubmit = (e) => {
     e.preventDefault();
     dispatch(forgotPassword(forgotpasswordemail));
-    
   };
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -33,29 +31,33 @@ function Login() {
     e.preventDefault();
     dispatch(login(loginEmail, loginPassword));
   };
+  const loginwithgoogle = () => {
+    const data= window.open("http://localhost:4000/auth/google/callback", "_self");
+    console.log(data);
+  };
   const handleforgotpasswordmodal = () => {
     setforgotpasswordmodal(!forgotpasswordmodal);
   };
   useEffect(() => {
-    console.log(error)
+    console.log(error);
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
-    if(message) {
-      alert.success(message)
-      setforgotpasswordmodal(!forgotpasswordmodal)
+    if (message) {
+      alert.success(message);
+      setforgotpasswordmodal(!forgotpasswordmodal);
     }
     if (isAuthenticated) {
       alert.success("Login successful");
       navigate("/");
     }
-  }, [dispatch, error, alert,message, isAuthenticated]);
+  }, [dispatch, error, alert, message, isAuthenticated]);
   return (
     <Usercontextprovider>
       <Navbar />
       <div class="pb-16">
-        <div class="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
+        <div class="flex mt-5 rounded-lg shadow-xl overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
           <div class="hidden lg:w-1/2 bg-cover lg:flex lg:justify-center lg:items-center p-6 rounded-lg   ">
             <img
               class="h-auto max-w-full"
@@ -65,13 +67,13 @@ function Login() {
             />
           </div>
           <div class="w-full p-8 lg:w-1/2">
-            <h2 class="text-2xl font-semibold text-gray-700 text-center">
+            <h2 class="text-2xl font-semibold text-darkbutton text-center">
               19 HERBS
             </h2>
-            <p class="text-xl text-darkuse text-center">Welcome back!</p>
+            <p class="text-xl text-darktext text-center">Welcome back!</p>
             <a
               href="#"
-              class="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100"
+              class="flex items-center justify-center mt-4 text-white bg-white rounded-lg shadow-md hover:bg-gray-100"
             >
               <div class="px-4 py-3">
                 <svg class="h-6 w-6" viewBox="0 0 40 40">
@@ -93,11 +95,13 @@ function Login() {
                   />
                 </svg>
               </div>
-              <h1 class="px-4 py-3 w-5/6 text-center text-darkuse font-bold">
-                Sign in with Google
-              </h1>
+              <div onClick={loginwithgoogle}>
+                <h1 class="px-3 py-3 text-center text-darkbutton font-bold">
+                  Sign up with Google
+                </h1>
+              </div>
             </a>
-            <div class="mt-4 flex items-center justify-between">
+            <div class="mt-4 flex items-center justify-center">
               <span class="border-b w-1/5 border-upperbar  lg:w-1/4"></span>
               <a href="#" class="text-xs  text-center text-gray-500 uppercase">
                 or login with email
@@ -105,11 +109,11 @@ function Login() {
               <span class="border-b w-1/5 border-upperbar  lg:w-1/4"></span>
             </div>
             <div class="mt-4">
-              <label class="block text-gray-700 text-sm font-bold mb-2">
+              <label class="block text-darkbutton text-sm font-bold mb-2">
                 Email Address
               </label>
               <input
-                class=" text-gray-700 focus:outline-none focus:shadow-outline border border-upperbar rounded py-2 px-4 block w-full appearance-none"
+                class="block w-full rounded-md border-0 p-1.5 text-darkbutton shadow-sm ring-1 ring-inset ring-darkbutton placeholder:text-darkbutton  sm:text-sm sm:leading-6"
                 type="email"
                 value={loginEmail}
                 onChange={(e) => setLoginEmail(e.target.value)}
@@ -117,13 +121,13 @@ function Login() {
             </div>
             <div class="mt-4">
               <div class="flex justify-between items-center">
-                <label class="block text-gray-700 text-sm font-bold mb-2">
+                <label class="block text-darkbutton text-sm font-bold mb-2">
                   Password
                 </label>
                 <button
                   data-modal-target="default-modal"
                   data-modal-toggle="default-modal"
-                  class="block text-darkuse  focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+                  class="block text-darkbutton  focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                   type="button"
                   onClick={handleforgotpasswordmodal}
                 >
@@ -131,28 +135,46 @@ function Login() {
                 </button>
               </div>
               <input
-                class="text-gray-700 focus:outline-none focus:shadow-outline border border-upperbar rounded py-2 px-4 block w-full appearance-none"
+                class="block w-full rounded-md border-0 p-1.5 text-darkbutton shadow-sm ring-1 ring-inset ring-darkbutton placeholder:text-darkbutton  sm:text-sm sm:leading-6"
                 type="password"
                 value={loginPassword}
                 onChange={(e) => setLoginPassword(e.target.value)}
               />
             </div>
             <div class="mt-8">
-            {
-              loading ? (<button disabled="" type="button" class="py-2 px-4 w-full text-sm font-medium text-gray-900 bg-white rounded border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-darkuse focus:text-darkuse dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 flex justify-center items-center text-center">
-              <svg aria-hidden="true" role="status" class="inline mr-2 w-4 h-4 text-gray-200 animate-spin dark:text-gray-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"></path>
-              <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="#1B5D04"></path>
-              </svg>
-              Loading...
-          </button>):(<button
-                class="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600"
-                onClick={loginSubmit}
-              >
-                Login
-              </button>)
-            }
-              
+              {loading ? (
+                <button
+                  disabled=""
+                  type="button"
+                  class="py-2 px-4 w-full text-sm font-medium text-gray-900 bg-white rounded border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-darkuse focus:text-darkuse dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 flex justify-center items-center text-center"
+                >
+                  <svg
+                    aria-hidden="true"
+                    role="status"
+                    class="inline mr-2 w-4 h-4 text-gray-200 animate-spin dark:text-gray-600"
+                    viewBox="0 0 100 101"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                      fill="currentColor"
+                    ></path>
+                    <path
+                      d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                      fill="#1B5D04"
+                    ></path>
+                  </svg>
+                  Loading...
+                </button>
+              ) : (
+                <button
+                  class="bg-darkbutton text-white font-bold py-2 px-4 w-full rounded hover:bg-darktext"
+                  onClick={loginSubmit}
+                >
+                  Login
+                </button>
+              )}
             </div>
             <div class="mt-4 flex items-center justify-between">
               <span class="border-b border-upperbar w-1/5 md:w-1/4"></span>
@@ -247,7 +269,7 @@ function Login() {
                     <p class="text-center">
                       Not registered yet?{" "}
                       <Link
-                        to={'/register    '}
+                        to={"/register    "}
                         class="text-darkuse font-medium inline-flex space-x-1 items-center"
                       >
                         <span>Register now </span>

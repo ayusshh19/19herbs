@@ -18,7 +18,7 @@ function Myorder() {
               <div class="relative flex flex-col min-w-0 break-words border-2  bg-clip-border rounded-2xl border-stone-200 bg-light/30">
                 <div class="flex-auto block py-8 pt-6 sm:px-9">
                   <div class="overflow-x-auto">
-                    <table class="w-full my-0 align-middle text-dark border-neutral-200">
+                    <table class="w-full my-0 align-middle text-darkbutton border-neutral-600">
                       <thead class=" align-middle">
                         <tr class="text-[0.95rem] text-secondary-dark text-center font-extrabold  p-20">
                           <th class="pb-3 text-start min-w-[175px]">
@@ -36,7 +36,7 @@ function Myorder() {
                         {data &&
                           data.orders?.map((orderdata) => {
                             return (
-                              <tr class="border-b border-dashed last:border-b-0 border-darkuse">
+                              <tr class="border-b border-dashed last:border-b-0 border-darkbutton">
                                 <td class="p-3 pl-0">
                                   <div class="flex justify-center items-center">
                                     <div class="flex justify-center flex-wrap">

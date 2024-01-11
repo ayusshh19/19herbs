@@ -50,21 +50,22 @@ export default function Quicktabs() {
 
   return (
    <>
-    <Box className="w-[80%] mt-12 m-auto text-darkuse font-bold">
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+    <Box className="w-[80%] mt-12 m-auto text-darkbutton">
+      <Box sx={{ borderBottom: 2, borderColor: "divider" }}>
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
           centered
-          className="text-xl"
+          className="text-xl font-extrabold"
         >
           <Tab
-            className="text-darkuse bg-darkuse text-xl"
+            className="text-darkbutton bg-darkuse font-extrabold text-xl"
             label="HairCare"
+            sx={{fontWeight:"bold"}}
             {...a11yProps(0)}
           />
-          <Tab label="Face Beauty" {...a11yProps(1)} />
+          <Tab label="Face Beauty" sx={{fontWeight:"bold"}} {...a11yProps(1)} />
         </Tabs>
       </Box>
       <div
@@ -83,7 +84,7 @@ export default function Quicktabs() {
         hidden={value !== 1}
         id={`simple-tabpanel-${1}`}
         aria-labelledby={`simple-tab-${1}`}
-        className="text-darkuse"
+        className="text-darkbutton"
       >
         <Box >
           <Productcards category={"Face"} value={value} setopen={setopen}/>

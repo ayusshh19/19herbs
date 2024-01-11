@@ -153,7 +153,7 @@ function Products() {
               <div class="flex flex-col flex-shrink-0 space-y-3 md:flex-row md:items-center lg:justify-end md:space-y-0 md:space-x-3">
                 <button
                   type="button"
-                  class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-darkuse hover:bg-upperbar focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+                  class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-darkbutton hover:bg-darktext focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
                   onClick={() => setnewproductmodal(true)}
                 >
                   <svg
@@ -171,7 +171,7 @@ function Products() {
             </div>
             <div class="overflow-x-auto">
               <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-white uppercase bg-darkuse dark:bg-gray-700 dark:text-gray-400">
+                <thead class="text-xs text-white uppercase bg-darkbutton dark:bg-gray-700 dark:text-gray-400">
                   <tr>
                    
                     <th scope="col" class="px-4 py-3">
@@ -219,24 +219,24 @@ function Products() {
                             />
                           </td>
                           <td class="px-4 py-2">
-                            <span class="bg-primary-100 text-darkuse text-lg font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300">
+                            <span class="bg-primary-100 text-darkbutton text-lg font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300">
                               {prod.category}
                             </span>
                           </td>
-                          <td class="px-4 py-2 font-medium text-darkuse whitespace-nowrap dark:text-darkuse">
+                          <td class="px-4 py-2 font-medium text-darkbutton whitespace-nowrap dark:text-darkbutton">
                             <div class="flex items-center">{prod.name}</div>
                           </td>
-                          <td class="px-4 py-2 font-medium   text-darkuse  dark:text-darkuse break-words  ">
+                          <td class="px-4 py-2 font-medium   text-darkbutton  dark:text-darkbutton break-words  ">
                             {prod.description}
                           </td>
-                          <td class="px-4 py-2 font-medium text-darkuse whitespace-nowrap dark:text-darkuse">
+                          <td class="px-4 py-2 font-medium text-darkbutton whitespace-nowrap dark:text-darkbutton">
                             {prod.price}
                           </td>
-                          <td class="px-4 py-2 font-medium text-darkuse whitespace-nowrap dark:text-darkuse">
+                          <td class="px-4 py-2 font-medium text-darkbutton whitespace-nowrap dark:text-darkbutton">
                             {prod.fakeprice}
                           </td>
                           {/* REVIEWS  */}
-                          <td class="px-4 py-2 font-medium text-darkuse whitespace-nowrap dark:text-darkuse">
+                          <td class="px-4 py-2 font-medium text-darkbutton whitespace-nowrap dark:text-darkbutton">
                             <div class="flex items-center">
                               <svg
                                 aria-hidden="true"
@@ -358,7 +358,7 @@ function Products() {
       >
         <div class="relative p-4 w-full max-w-md max-h-full">
           {/* <!-- Modal content --> */}
-          <div class="relative bg-upperbar top-20 md:top-20 md:left-[80%] rounded-lg shadow dark:bg-gray-700">
+          <div class="relative bg-darktext top-20 md:top-20 md:left-[80%] rounded-lg shadow dark:bg-gray-700">
             {/* <!-- Modal header --> */}
             <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
               <h3 class="text-lg font-semibold text-white dark:text-white">
@@ -401,7 +401,7 @@ function Products() {
                     type="text"
                     name="name"
                     id="name"
-                    class="bg-gray-50 border border-gray-300 text-upperbar text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    class="bg-gray-50 border border-gray-300 text-darktext text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Type product name"
                     required=""
                     value={name}
@@ -419,7 +419,7 @@ function Products() {
                     type="number"
                     name="price"
                     id="price"
-                    class="bg-gray-50 border border-gray-300 text-upperbar text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    class="bg-gray-50 border border-gray-300 text-darktext text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="2999"
                     required=""
                     value={price}
@@ -435,7 +435,7 @@ function Products() {
                   </label>
                   <select
                     id="category"
-                    class="bg-gray-50 border border-gray-300 text-darkuse    text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    class="bg-gray-50 border border-gray-300 text-darkbutton    text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     onChange={(e) => setCategory(e.target.value)}
                   >
                     <option selected="">Select category</option>
@@ -467,7 +467,7 @@ function Products() {
                   <textarea
                     id="description"
                     rows="4"
-                    class="block p-2.5 w-full text-sm text-upperbar bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="block p-2.5 w-full text-sm text-darktext bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Write product description here"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
@@ -476,7 +476,7 @@ function Products() {
               </div>
               <button
                 type="submit"
-                class="text-white inline-flex items-center bg-darkuse hover:bg-lightuse focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-upperbar dark:hover:bg-upperbar dark:focus:ring-blue-800"
+                class="text-white inline-flex items-center bg-darkbutton hover:bg-lightuse focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-darktext dark:hover:bg-darktext dark:focus:ring-blue-800"
               >
                 <svg
                   class="me-1 -ms-1 w-5 h-5"

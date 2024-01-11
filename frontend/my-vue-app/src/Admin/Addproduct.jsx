@@ -68,7 +68,7 @@ function Addproduct({ newproductmodal ,setnewproductmodal}) {
       >
         <div class="relative p-4 w-full max-w-md max-h-full">
           {/* <!-- Modal content --> */}
-          <div class="relative bg-upperbar top-20 md:top-10 md:left-[80%] rounded-lg shadow dark:bg-gray-700">
+          <div class="relative bg-darktext top-20 md:top-10 md:left-[80%] rounded-lg shadow dark:bg-gray-700">
             {/* <!-- Modal header --> */}
             <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
               <h3 class="text-lg font-semibold text-white dark:text-white">
@@ -111,7 +111,7 @@ function Addproduct({ newproductmodal ,setnewproductmodal}) {
                     type="text"
                     name="name"
                     id="name"
-                    class="bg-gray-50 border border-gray-300 text-upperbar text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    class="bg-gray-50 border border-gray-300 text-darktext text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Type product name"
                     required=""
                     value={name}
@@ -129,7 +129,7 @@ function Addproduct({ newproductmodal ,setnewproductmodal}) {
                     type="number"
                     name="price"
                     id="price"
-                    class="bg-gray-50 border border-gray-300 text-upperbar text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    class="bg-gray-50 border border-gray-300 text-darktext text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="2999"
                     required=""
                     onChange={(e) => setPrice(e.target.value)}
@@ -163,7 +163,7 @@ function Addproduct({ newproductmodal ,setnewproductmodal}) {
                     type="number"
                     name="price"
                     id="price"
-                    class="bg-gray-50 border border-gray-300 text-upperbar text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    class="bg-gray-50 border border-gray-300 text-darktext text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="2999"
                     required=""
                     onChange={(e) => setfakePrice(e.target.value)}
@@ -193,7 +193,7 @@ function Addproduct({ newproductmodal ,setnewproductmodal}) {
                   <textarea
                     id="description"
                     rows="4"
-                    class="block p-2.5 w-full text-sm text-upperbar bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="block p-2.5 w-full text-sm text-darktext bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Write product description here"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
@@ -210,7 +210,7 @@ function Addproduct({ newproductmodal ,setnewproductmodal}) {
             </button>):(
               <button
                 type="submit"
-                class="text-white inline-flex items-center bg-darkuse hover:bg-lightuse focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-upperbar dark:hover:bg-upperbar dark:focus:ring-blue-800"
+                class="text-white inline-flex items-center bg-darkbutton hover:bg-lighttext  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-darktext dark:hover:bg-darktext dark:focus:ring-blue-800"
               >
                 <svg
                   class="me-1 -ms-1 w-5 h-5"

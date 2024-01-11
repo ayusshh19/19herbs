@@ -54,13 +54,14 @@ export function StepperWithContent() {
             activeStep={activeStep}
             isLastStep={(value) => setIsLastStep(value)}
             isFirstStep={(value) => setIsFirstStep(value)}
+            
           >
-            <Step>
+            <Step style={{backgroundColor:`${activeStep>=0?"green":""}`}}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                stroke-width="1.6"
                 stroke="currentColor"
                 class="w-6 h-6"
               >
@@ -80,7 +81,7 @@ export function StepperWithContent() {
                 </Typography>
               </div>
             </Step>
-            <Step>
+            <Step style={{backgroundColor:`${activeStep>=0?"green":""}`}}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -105,7 +106,7 @@ export function StepperWithContent() {
                 </Typography>
               </div>
             </Step>
-            <Step>
+            <Step style={{backgroundColor:`${activeStep>=0?"green":""}`}}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

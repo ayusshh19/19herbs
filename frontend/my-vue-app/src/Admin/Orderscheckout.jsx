@@ -61,7 +61,7 @@ function Orderscheckout() {
       <div className="sm:mx-auto ml-10 max-w-screen-xl px-4 py-20 sm:px-8">
         <div class="flex flex-wrap -mx-3 mb-5" >
           <div class="w-full max-w-full sm:px-3 mb-6  mx-auto ">
-            <div class="relative flex-[1_auto] flex flex-col break-words min-w-0 bg-clip-border rounded-[.95rem] m-5  text-darkuse">
+            <div class="relative flex-[1_auto] flex flex-col break-words min-w-0 bg-clip-border rounded-[.95rem] m-5  text-darkbutton">
               <div class="relative flex flex-col min-w-0 break-words border-2  bg-clip-border rounded-2xl border-stone-200 bg-light/30">
                 <div class="flex-auto block py-8 pt-6 sm:px-9">
                   <div class="overflow-x-auto">
@@ -88,7 +88,7 @@ function Orderscheckout() {
                         {derivedorder &&
                           derivedorder.map((orderdata) => {
                             return (
-                              <tr class="border-b border-dashed last:border-b-0 border-darkuse">
+                              <tr class="border-b border-dashed last:border-b-0 border-darkbutton">
                                 <td class="p-3 pl-0">
                                   <div class="flex items-center">
                                     <div class="flex flex-col justify-start">

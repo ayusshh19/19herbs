@@ -166,7 +166,7 @@ function Checkout({ handleNext }) {
                         onClick={() => setcouponmodelOpen(false)}
                       >
                         <svg
-                          class="h-8 w-8 text-gray-500"
+                          class="h-8 w-8 text-darkbutton"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -180,7 +180,7 @@ function Checkout({ handleNext }) {
                         </svg>
                       </div>
                       <div className="sm:flex justify-evenly items-center gap-4">
-                        <div className="mx-auto flex sm:h-24 sm:w-24 flex-shrink-0 items-center justify-evenly rounded-full bg-upperbar sm:mx-0 h-12 w-12">
+                        <div className="mx-auto flex sm:h-24 sm:w-24 flex-shrink-0 items-center justify-evenly rounded-full bg-darkbutton sm:mx-0 h-12 w-12">
                           <svg
                             class="h-24 w-24 text-white"
                             fill="none"
@@ -195,12 +195,12 @@ function Checkout({ handleNext }) {
                             />
                           </svg>
                         </div>
-                        <h1 className="text-6xl text-center">20% OFF</h1>
+                        <h1 className="text-6xl text-center text-darkbutton">20% OFF</h1>
                       </div>
                       <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
                         <Dialog.Title
                           as="h3"
-                          className="text-base text-center m-3 font-semibold leading-6 text-gray-900"
+                          className="text-base text-center m-3 font-semibold leading-6 text-darktext"
                         >
                           19 HERBS
                         </Dialog.Title>
@@ -219,8 +219,8 @@ function Checkout({ handleNext }) {
           </div>
         </Dialog>
       </Transition.Root>
-      <div class="px-4 pt-8 ordersummary">
-        <p class="text-xl font-medium">Order Summary</p>
+      <div class="px-4 pt-8 ordersummary text-darkbutton">
+        <p class="text-xl font-bold">Order Summary</p>
         <p class="text-gray-400">
           Check your items. And select a suitable shipping method.
         </p>
@@ -241,7 +241,7 @@ function Checkout({ handleNext }) {
 
                       <div className="ml-4 flex flex-1 flex-col ">
                         <div>
-                          <div className="flex justify-evenly text-base font-bold text-gray-900">
+                          <div className="flex justify-evenly text-base font-bold text-darkbutton">
                             <h3>
                               <a href={product.href}>{product.name}</a>
                             </h3>
@@ -258,7 +258,7 @@ function Checkout({ handleNext }) {
                           <div class="flex flex-row justify-evenly items-center w-full sm:w-[30%] rounded-lg relative bg-transparent text-lg border-2 border-gray-200">
                             <button
                               data-action="decrement"
-                              class="  text-darkuse hover:text-white hover:bg-upperbar h-full w-full   rounded-l cursor-pointer outline-none"
+                              class="  text-darkuse hover:text-white hover:bg-darkbutton h-full w-full   rounded-l cursor-pointer outline-none"
                               onClick={() =>
                                 decreaseQuantity(
                                   product.product,
@@ -275,7 +275,7 @@ function Checkout({ handleNext }) {
                             </p>
                             <button
                               data-action="increment"
-                              class="text-darkuse hover:text-white hover:bg-upperbar h-full w-full   rounded-r cursor-pointer"
+                              class="text-darkuse hover:text-white hover:bg-darkbutton h-full w-full   rounded-r cursor-pointer"
                               onClick={() =>
                                 increaseQuantity(
                                   product.product,
@@ -293,7 +293,7 @@ function Checkout({ handleNext }) {
                           <div className="flex">
                             <button
                               type="button"
-                              className="font-medium text-darkuse hover:text-upperbar mx-6 "
+                              className="font-medium text-darkuse hover:text-darkbutton mx-6 "
                               onClick={() => deleteCartItems(product.product)}
                             >
                               Remove
@@ -304,7 +304,7 @@ function Checkout({ handleNext }) {
                     </li>
                   ))
                 ) : (
-                  <h1 className="text-upperbar text-2xl">
+                  <h1 className="text-darkbutton text-2xl">
                     No products added into cart yet!!
                   </h1>
                 )}
@@ -321,20 +321,20 @@ function Checkout({ handleNext }) {
             type="text"
             id="coupon"
             name="coupon"
-            class="w-full px-4  border border-gray-300 py-2 rounded-lg focus:ring focus:ring-upperbar focus:border-0 "
+            class="w-full px-4  border border-gray-300 py-2 rounded-lg focus:ring focus:ring-darkbutton focus:border-0 "
             placeholder="Enter your coupon code"
             onChange={(e) => setcoupon(e.target.value)}
           />
           <button
-            class="bg-darkuse text-white px-4 py-2  rounded-lg hover:bg-upperbar focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500"
+            class="bg-darkbutton text-white px-4 py-2  rounded-lg hover:bg-darktext focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500"
             onClick={handlecouponfunc}
           >
             Apply
           </button>
         </div>
       </div>
-      <div class="mt-10  px-4 sm:pt-8 lg:mt-0">
-        <p class="text-xl font-medium">Delivery Address</p>
+      <div class="mt-10  px-4 sm:pt-8 lg:mt-0 text-darkbutton">
+        <p class="text-xl font-bold">Delivery Address</p>
         <p class="text-gray-400">
           Add detailed address where you want your product to be delivered!
         </p>
@@ -343,14 +343,14 @@ function Checkout({ handleNext }) {
             <div>
               <label
                 for="first_name"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                class="block mb-2 text-sm font-semibold text-darkbutton dark:text-white"
               >
                 First name
               </label>
               <input
                 type="text"
                 id="first_name"
-                class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class=" border border-gray-300 text-darkbutton text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="John"
                 required
                 value={fnameship}
@@ -360,14 +360,14 @@ function Checkout({ handleNext }) {
             <div>
               <label
                 for="last_name"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                class="block mb-2 text-sm font-semibold text-darkbutton dark:text-white"
               >
                 Last name
               </label>
               <input
                 type="text"
                 id="last_name"
-                class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class=" border border-gray-300 text-darkbutton text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Doe"
                 required
                 value={lnameship}
@@ -378,14 +378,14 @@ function Checkout({ handleNext }) {
           <div class="mb-4">
             <label
               for="email"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              class="block mb-2 text-sm font-semibold text-darkbutton dark:text-white"
             >
               Address 1
             </label>
             <input
               type="text"
               id="address1"
-              class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class=" border border-gray-300 text-darkbutton text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Room no / Floor / Apartment name"
               required
               value={address1}
@@ -395,14 +395,14 @@ function Checkout({ handleNext }) {
           <div class="mb-4  ">
             <label
               for="password"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              class="block mb-2 text-sm font-semibold text-darkbutton dark:text-white"
             >
               Address 2
             </label>
             <input
               type="text    "
               id="address2"
-              class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class=" border border-gray-300 text-darkbutton text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Street / Area / Nearby landmarks"
               required
               value={address2}
@@ -413,14 +413,14 @@ function Checkout({ handleNext }) {
             <div>
               <label
                 for="company"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                class="block mb-2 text-sm font-semibold text-darkbutton dark:text-white"
               >
                 City
               </label>
               <input
                 type="text"
                 id="city"
-                class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class=" border border-gray-300 text-darkbutton text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Eg. Kalyan"
                 required
                 value={city}
@@ -431,13 +431,13 @@ function Checkout({ handleNext }) {
             <div>
               <label
                 for="website"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                class="block mb-2 text-sm font-semibold text-darkbutton dark:text-white"
               >
                 State
               </label>
               <select
                 data-te-select-init
-                className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="border border-gray-300 text-darkbutton text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 value={state}
                 onChange={(e) => setState(e.target.value)}
               >
@@ -452,7 +452,7 @@ function Checkout({ handleNext }) {
               {/* <input
                 type="text"
                 id="state"
-                class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class=" border border-gray-300 text-darkbutton text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Eg. Maharastra"
                 required
                 value={state}
@@ -462,14 +462,14 @@ function Checkout({ handleNext }) {
             <div>
               <label
                 for="phone"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                class="block mb-2 text-sm font-semibold text-darkbutton dark:text-white"
               >
                 Phone number
               </label>
               <input
                 type="tel"
                 id="phone"
-                class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class=" border border-gray-300 text-darkbutton text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Eg. 9029011290"
                 pattern="[0-9]{10}"
                 required
@@ -480,14 +480,14 @@ function Checkout({ handleNext }) {
             <div>
               <label
                 for="code"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                class="block mb-2 text-sm font-semibold text-darkbutton dark:text-white"
               >
                 Pin code
               </label>
               <input
                 type="text"
                 id="pinCode"
-                class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class=" border border-gray-300 text-darkbutton text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Area code"
                 required
                 value={pinCode}
@@ -498,16 +498,16 @@ function Checkout({ handleNext }) {
 
           <div class="mt-6 border-t border-b py-2">
             <div class="flex items-center justify-between">
-              <p class="text-sm font-medium text-gray-900">Subtotal</p>
-              <p class="font-semibold text-gray-900">{`₹ ${finalammount}`}</p>
+              <p class="text-sm font-semibold text-darkbutton">Subtotal</p>
+              <p class="font-semibold text-darkbutton">{`₹ ${finalammount}`}</p>
             </div>
             <div class="flex items-center justify-between">
-              <p class="text-sm font-medium text-gray-900">Shipping</p>
-              <p class="font-semibold text-gray-900">₹ 99</p>
+              <p class="text-sm font-semibold text-darkbutton">Shipping</p>
+              <p class="font-semibold text-darkbutton">₹ 99</p>
             </div>
             {couponappliedfordiscount && (
               <div class="flex items-center justify-between">
-                <p class="text-sm font-medium text-red">Discount</p>
+                <p class="text-sm font-semibold text-red">Discount</p>
                 <p class="font-semibold text-red">
                   - ₹ {Math.floor((20 * finalammount) / 100)}
                 </p>
@@ -515,14 +515,14 @@ function Checkout({ handleNext }) {
             )}
           </div>
           <div class="mt-6 flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-900">Total</p>
-            <p class="text-2xl font-semibold text-gray-900">{`₹ ${
+            <p class="text-sm font-semibold text-darkbutton">Total</p>
+            <p class="text-2xl font-semibold text-darkbutton">{`₹ ${
               finalammount - Math.floor((20 * finalammount) / 100)
             }`}</p>
           </div>
         </form>
         <button
-          class="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 hover:scale-105 transition-all duration-150 font-medium text-white flex justify-center items-center"
+          class="mt-4 mb-8 w-full rounded-md bg-darkbutton px-6 py-3 hover:scale-105 transition-all duration-150 font-medium text-white flex justify-center items-center"
           onClick={shippingSubmit}
         >
           Place Order{" "}

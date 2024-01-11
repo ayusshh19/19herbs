@@ -27,7 +27,7 @@ exports.registerUser = async (req, res, next) => {
     });
     sendToken(user, 201, res);
   } catch (error) {
-    return next(new ErrorHander("Check your input " , 401));
+    return next(new ErrorHander(error , 401));
   }
 };
 

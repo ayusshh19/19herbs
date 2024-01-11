@@ -95,14 +95,14 @@ export default function Navbar() {
   const dispatch = useDispatch();
 
   const totalcountitemcart = useSelector((state) => state.cart.totalcount);
-  console.log(totalcountitemcart);
+  // console.log(totalcountitemcart);
   const { setcartaddhandlesidebar } = useContext(Usercontext);
   const logoutuserbuttonsubmit=(e)=>{
     e.preventDefault();
     dispatch(logout())
   }
   return (
-    <div className="bg-white">
+    <div className="">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -266,8 +266,8 @@ export default function Navbar() {
         </Dialog>
       </Transition.Root>
 
-      <header className="relative bg-white">
-        <p className="flex h-10 items-center justify-center bg-darkuse px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
+      <header className="relative">
+        <p className="flex h-10 items-center justify-center bg-darktext px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
           Get 20% off on purchase of 3 items
         </p>
 
@@ -299,7 +299,7 @@ export default function Navbar() {
                     src="https://www.greenparty.ca/sites/default/files/downloads/logos/gpc_logo_web_green_flower.png"
                     alt=""
                   />
-                  <h3 className="text-darkuse">19 HERB</h3>
+                  <h3 className="text-darkbutton font-semibold">19 HERB</h3>
                 </Link>
               </div>
 
@@ -314,9 +314,9 @@ export default function Navbar() {
                             <Popover.Button
                               className={classNames(
                                 open
-                                  ? "border-indigo-600 text-darkuse"
-                                  : "border-transparent text-darkuse hover:text-upperbar",
-                                "relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out"
+                                  ? "text-darkbutton"
+                                  : " text-darkbutton hover:text-lighttext",
+                                "relative z-10 -mb-px flex items-center pt-px text-sm font-medium transition-colors duration-200 ease-out"
                               )}
                             >
                               {category.name}
@@ -357,7 +357,7 @@ export default function Navbar() {
                                           </div>
                                           <a
                                             href={item.href}
-                                            className="mt-6 block font-medium text-darkuse"
+                                            className="mt-6 block font-bold text-darkbutton"
                                           >
                                             <span
                                               className="absolute inset-0 z-10"
@@ -367,7 +367,7 @@ export default function Navbar() {
                                           </a>
                                           <p
                                             aria-hidden="true"
-                                            className="mt-1"
+                                            className="mt-1 text-lighttext"
                                           >
                                             Shop now
                                           </p>
@@ -379,7 +379,7 @@ export default function Navbar() {
                                         <div key={section.name}>
                                           <p
                                             id={`${section.name}-heading`}
-                                            className="font-medium text-darkuse"
+                                            className="font-bold text-darkbutton"
                                           >
                                             {section.name}
                                           </p>
@@ -395,7 +395,7 @@ export default function Navbar() {
                                               >
                                                 <a
                                                   href={item.href}
-                                                  className="hover:text-upperbar"
+                                                  className="hover:text-lighttext text-darktext"
                                                 >
                                                   {item.name}
                                                 </a>
@@ -419,7 +419,7 @@ export default function Navbar() {
                     <a
                       key={page.name}
                       href={page.href}
-                      className="flex items-center text-sm font-medium text-darkuse hover:text-upperbar"
+                      className="flex items-center text-sm font-medium text-darkbutton hover:text-darktext"
                     >
                       {page.name}
                     </a>
@@ -432,14 +432,14 @@ export default function Navbar() {
                   <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                     <Link
                       to="/login"
-                      className="text-sm font-medium text-darkuse hover:text-upperbar"
+                      className="text-sm font-medium text-darkbutton hover:text-upperbar"
                     >
                       Sign in
                     </Link>
                     <span className="h-6 w-px bg-upperbar" aria-hidden="true" />
                     <Link
                       to="/register"
-                      className="text-sm font-medium text-darkuse hover:text-upperbar"
+                      className="text-sm font-medium text-darkbutton hover:text-upperbar"
                     >
                       Create account
                     </Link>
@@ -453,10 +453,10 @@ export default function Navbar() {
                 >
                   <a className="group -m-2 flex items-center p-2">
                     <ShoppingBagIcon
-                      className="h-6 w-6 flex-shrink-0 text-darkuse group-hover:text-upperbar"
+                      className="h-6 w-6 flex-shrink-0 text-darkbutton group-hover:text-darktext"
                       aria-hidden="true"
                     />
-                    <span className="ml-2 text-sm font-medium text-darkuse group-hover:text-upperbar">
+                    <span className="ml-2 text-sm font-medium text-darkbutton group-hover:text-darktext">
                       {totalcountitemcart}
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
@@ -482,12 +482,12 @@ export default function Navbar() {
                       userdropdownopen ? 'block' : 'hidden'
                     }`}
                   >
-                    <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                    <div className="px-4 py-3 text-sm text-darktext font-semibold dark:text-white">
                       <div>{user.name}</div>
-                      <div className="font-medium truncate">{user.email}</div>
+                      <div className="truncate text-darktext font-semibold">{user.email}</div>
                     </div>
                     <ul
-                      className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                      className="py-2 text-sm text-darktext font-semibold dark:text-gray-200"
                       aria-labelledby="avatarButton"
                     >
                        {
@@ -522,7 +522,7 @@ export default function Navbar() {
                     <div className="py-1">
                       <a
                         onClick={logoutuserbuttonsubmit}
-                        className="block px-4 py-2 text-sm cursor-pointer text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                        className="block px-4 py-2 text-sm cursor-pointer text-darktext font-semibold hover:bg-textlight dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                       >
                        Log Out
                       </a>
